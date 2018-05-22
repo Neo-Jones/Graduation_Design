@@ -1,8 +1,6 @@
 # Graduation_Design
-  My graduation design
-# my-blog
 
-> My Graduation Design
+> ### my-blog
 
 ## Build Setup
 
