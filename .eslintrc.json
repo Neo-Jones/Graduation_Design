@@ -1,0 +1,83 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["plugin:vue/essential", "eslint:recommended"],
+  "plugins": [
+    "vue",
+    "import"
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "client/build/webpack.base.conf.js"
+      }
+    }
+  },
+  "rules": {
+    "import/extensions": ["error", "always", {
+      "js": "never",
+      "vue": "never"
+    }],
+
+    "indent": [
+      "error",
+      "tab"
+    ],
+    "linebreak-style": [
+      "off"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "no-console": [
+      "off"
+    ]
+  },
+  "globals": {
+    "Vue": false,
+    "Vuex": false,
+    "VueAsyncData": false,
+    "GLOBAL_VAR": false,
+    "Tetris": false,
+    "fis": false,
+    "_": false,
+    "__inline": false,
+    "__uri": false,
+    "listener": false,
+    "module": false,
+    "Pagelet": false,
+    "UE": false,
+    "Swiper": false,
+    "ZeroClipboard": false,
+    "urlize": false,
+    "__M": false,
+    "Raven": false,
+    "Common": false,
+    "ReportSdk": false,
+    "Util": false,
+    "CONST": false,
+    "wx": false,
+    "gaevent": false,
+    "DISQUS": false
+  }
+
+}

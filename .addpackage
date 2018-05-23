@@ -1,3 +1,61 @@
-nodemon
+    "nodemon": "^1.17.4",
+    
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compress": "^3.0.0",
+    "koa-convert": "^1.2.0",
+    "koa-onerror": "^4.0.0",
+    "koa-static": "^4.0.3",
+    "mongoose": "^5.1.2",
 
-babel-polyfill
+    "babel-polyfill": "^6.26.0",
+
+    "connect-history-api-fallback": "^1.5.0",
+
+    // "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+
+
+
+ 1620  cnpm install --save koa
+ 1621  cnpm install --save koa-bobyparser
+ 1622  cnpm install --save koa-bodyparser
+ 1623  cnpm install --save koa-compress
+ 1624  cnpm install --save koa-convert
+ 1625  cnpm install --save koa-onerror koa-static
+ 1626  cnpm install --save mongoose
+ 
+ 1633  cnpm install --save-dev connect-history-api-fallback
+ 1634  cnpm install --save vue-server-renderer
+ 1635  cnpm install --save lru-cache
+ 1636  cnpm install --save koa-logger
+ 1639  cnpm install --save axios element-ui
+ 1640  cnpm install --save fastclick
+ 1641  cnpm install --save font-awesome
+ 1642  cnpm install --save highlight.js
+ 1643  cnpm install --save koa-connect-history-api-fallback
+ 1644  cnpm install --save koa-router
+ 1645  cnpm install --save marked
+ 1646  cnpm install --save md5
+ 1647  cnpm install --save moment
+ 1648  cnpm install --save require-dir
+ 1649  cnpm install --save vue
+ 1650  cnpm install --save vue-router
+ 1651  cnpm install --save simplemde
+ 1652  cnpm install --save ssri
+ 1653  cnpm install --save strip-ansi
+ 1654  cnpm install --save vuex
+ 1655  cnpm install --save vuex-router-sync
+ 1656  cnpm install --save-dev babel-plugin-component
+ 1657  cnpm install --save-dev cross-env
+ 1658  cnpm install --save-dev cz-conventional-changelog
+ 1659  cnpm install --save-dev jsonwebtoken
+ 1660  cnpm install --save-dev style-loader
+ 1661  cnpm install --save-dev stylus
+ 1662  cnpm install --save-dev stylus-loader
+ 1663  cnpm install --save-dev vue-ssr-webpack-plugin
+ 1664  cnpm install --save-dev webpack-dev-middleware
+ 1665  cnpm install --save-dev webpack-hot-middleware
+ 1666  cnpm install --save-dev webpack-merge
+ 1667  cnpm install --save-dev webpack-node-externals
+
+
