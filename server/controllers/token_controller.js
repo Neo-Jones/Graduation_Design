@@ -1,6 +1,6 @@
-import md5 from 'md5'
-import jwt from 'jsonwebtoken'
-import config from '../configs/'
+const md5 = require('md5')
+const jwt = require('jsonwebtoken')
+const config = require('../configs/')
 
 import User from '../models/user.js'
 

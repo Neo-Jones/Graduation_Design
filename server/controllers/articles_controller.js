@@ -1,7 +1,3 @@
-const md5 = require('md5')
-const jwt = require('jsonwebtoken')
-
-const config = require('../configs/')
 const Article = require('../models/article.js')
 
 export async function createArticle(ctx) {
@@ -157,14 +153,11 @@ export async function getAllPublishArticles(ctx) {
 			tags: {
 				$in: tagArr
 			},
-		}).count().catch(err => {
+		}).count().catch(() => {
 			ctx.throw(500, '服务器内部错误')
 		})
 	}
-
 	allPage = Math.ceil(allNum / limit)
-
-
 	ctx.body = {
 		success: true,
 		articleArr,
@@ -172,14 +165,15 @@ export async function getAllPublishArticles(ctx) {
 	}
 }
 
-
 export async function modifyArticle(ctx) {
-	// console.log(ctx.request.body)
 	const id = ctx.params.id
 	const title = ctx.request.body.title
 	const content = ctx.request.body.content
 	const abstract = ctx.request.body.abstract
-	const tags = ctx.request.body.tags
+	if (id === '') {
+		ctx.throw(400, 'id不能为空')
+	}
+
 	if (title === '') {
 		ctx.throw(400, '标题不能为空')
 	}
@@ -190,10 +184,7 @@ export async function modifyArticle(ctx) {
 		ctx.throw(400, '摘要不能为空')
 	}
 
-	/* if (tags.length === 0) {
-    ctx.throw(400, '标签不能为空')
-  } */
-	const article = await Article.findByIdAndUpdate(id, {
+	const result = await Article.findByIdAndUpdate(ctx.params.id, {
 		$set: ctx.request.body
 	}).catch(err => {
 		if (err.name === 'CastError') {
@@ -204,6 +195,7 @@ export async function modifyArticle(ctx) {
 	})
 	ctx.body = {
 		success: true,
+		result: result
 	}
 }
 
@@ -213,9 +205,6 @@ export async function getArticle(ctx) {
 		ctx.throw(400, 'id不能为空')
 	}
 
-	/* if (tags.length === 0) {
-    ctx.throw(400, '标签不能为空')
-  } */
 	const article = await Article.findById(id).catch(err => {
 		if (err.name === 'CastError') {
 			ctx.throw(400, 'id不存在')
@@ -231,7 +220,7 @@ export async function getArticle(ctx) {
 
 export async function deleteArticle(ctx) {
 	const id = ctx.params.id
-	const article = await Article.findByIdAndRemove(id).catch(err => {
+	const result = await Article.findByIdAndRemove(id).catch(err => {
 		if (err.name === 'CastError') {
 			this.throw(400, 'id不存在')
 		} else {
@@ -240,12 +229,13 @@ export async function deleteArticle(ctx) {
 	})
 	ctx.body = {
 		success: true,
+		result: result
 	}
 }
 
 export async function publishArticle(ctx) {
 	const id = ctx.params.id
-	const article = await Article.findByIdAndUpdate(id, {
+	const result = await Article.findByIdAndUpdate(id, {
 		$set: {
 			publish: true
 		}
@@ -258,12 +248,13 @@ export async function publishArticle(ctx) {
 	})
 	ctx.body = {
 		success: true,
+		result: result
 	}
 }
 
 export async function notPublishArticle(ctx) {
 	const id = ctx.params.id
-	const article = await Article.findByIdAndUpdate(id, {
+	const result = await Article.findByIdAndUpdate(id, {
 		$set: {
 			publish: false
 		}
@@ -276,5 +267,6 @@ export async function notPublishArticle(ctx) {
 	})
 	ctx.body = {
 		success: true,
+		result: result
 	}
 }
