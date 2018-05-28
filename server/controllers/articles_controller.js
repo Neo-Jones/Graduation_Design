@@ -1,4 +1,4 @@
-const Article = require('../models/article.js')
+import Article from '../models/article.js'
 
 export async function createArticle(ctx) {
 	// 初始化模型对象

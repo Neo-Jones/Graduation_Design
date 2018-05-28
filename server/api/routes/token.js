@@ -1,4 +1,4 @@
-const $ = require('../../controllers/token_controller.js')
+import * as $ from '../../controllers/token_controller.js'
 
 export default async (router) => {
 	$.initUser()

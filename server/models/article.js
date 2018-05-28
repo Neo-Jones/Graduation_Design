@@ -1,6 +1,6 @@
 // 利用mongoose对mongodb中的'文章'建模
-const Mongoose = require('mongoose')
-const Moment = require('moment')
+import Mongoose from 'mongoose'
+import Moment from 'moment'
 
 Moment.locale('zh-cn')
 const Schema = Mongoose.Schema

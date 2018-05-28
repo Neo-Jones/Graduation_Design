@@ -1,5 +1,5 @@
-const Tag = require('../models/tag.js')
-const Article = require('../models/article')
+import Tag from '../models/tag.js'
+import Article from '../models/article'
 
 export async function createTag(ctx) {
 	const tagName = ctx.request.body.name

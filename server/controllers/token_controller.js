@@ -1,7 +1,7 @@
-const md5 = require('md5')
-const jwt = require('jsonwebtoken')
-const config = require('../configs/')
+import md5 from 'md5'
+import jwt from 'jsonwebtoken'
 
+import config from '../../config/server.js'
 import User from '../models/user.js'
 
 export async function initUser() {
@@ -9,11 +9,8 @@ export async function initUser() {
 		console.log(err)
 	})
 	if (user.length === 0) {
-		// 目前还没做修改密码的功能，因为是单用户系统觉得需求不大
-		// 如果想更换用户名／密码，先将数据库原有user删除(drop)
-		// 配置中加入用户名密码，重启服务即可
 		user = new User({
-			name: 'hjm',
+			name: 'Neo-Jones',
 			username: config.admin.user,
 			password: md5(config.admin.pwd).toUpperCase(),
 			avatar: '',

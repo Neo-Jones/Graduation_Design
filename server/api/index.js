@@ -1,9 +1,9 @@
-const Router = require('koa-router')
-const Convert = require('koa-convert')
+import Router from 'koa-router'
+import Convert from 'koa-convert'
 
-const RequireDir = require('require-dir')
+import RequireDir from 'require-dir'
 
-const config = require('../../config/server')
+import config from '../../config/server.js'
 
 const routes = RequireDir('./routes')
 

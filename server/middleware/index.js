@@ -1,7 +1,7 @@
-const logger = require('koa-logger')
-const bodyParser = require('koa-bodyparser')
-const convert = require('koa-convert')
-const compress = require('koa-compress')
+import logger from 'koa-logger'
+import bodyParser from 'koa-bodyparser'
+import convert from 'koa-convert'
+import compress from 'koa-compress'
 
 export default function middleware() {
 	return convert.compose(

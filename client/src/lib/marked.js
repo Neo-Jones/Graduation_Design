@@ -1,5 +1,5 @@
-const highlight = require('highlight.js')
-const marked = require('marked')
+import highlight from 'highlight.js'
+import marked from 'marked'
 const languages = ['cpp', 'xml', 'bash', 'coffeescript', 'css', 'markdown', 'http', 'java', 'javascript', 'json', 'less', 'makefile', 'nginx', 'php', 'python', 'scss', 'sql', 'stylus']
 highlight.registerLanguage('cpp', require('highlight.js/lib/languages/cpp'))
 highlight.registerLanguage('xml', require('highlight.js/lib/languages/xml'))

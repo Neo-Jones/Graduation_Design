@@ -6,7 +6,10 @@
     "es6": true,
     "node": true
   },
-  "extends": ["plugin:vue/essential", "eslint:recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/essential"
+  ],
   "plugins": [
     "vue",
     "import"
@@ -22,16 +25,15 @@
   },
   "settings": {
     "import/resolver": {
-      "webpack": {
-        "config": "client/build/webpack.base.conf.js"
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     }
   },
   "rules": {
-    "import/extensions": ["error", "always", {
-      "js": "never",
-      "vue": "never"
-    }],
 
     "indent": [
       "error",
