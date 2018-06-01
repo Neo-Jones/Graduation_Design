@@ -161,7 +161,6 @@ export default {
       });
     }
   },
-
   mounted() {
     this.getAllArticles().then(res => {
       console.log("allPage:", this.allPage);

@@ -88,7 +88,8 @@ export default {
     }),
     ...mapActions(["getAllTags"]),
     backToIndex() {
-      this.$router.push("/");
+    //   this.$router.push("/");
+        this.setSelectTags([]);
     },
     getScrollTop() {
       let scrollTop = 0,

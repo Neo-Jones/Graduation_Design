@@ -71,7 +71,7 @@ const actions = {
           allPage: res.data.allPage,
           curPage: page
         })
-        dispatch('getCurrentArticle', 0)
+        dispatch('getCurrentArticle', -1)
       }
       return new Promise((resolve, reject) => {
         resolve(res)

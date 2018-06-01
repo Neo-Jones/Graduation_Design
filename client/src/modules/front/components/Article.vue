@@ -87,6 +87,15 @@ export default {
     // this.compiledPost = this.compiledMarkdown(this.currentPost.content)
     // this.isLoading = false
     scrollTo(0, 0);
+    articleApi
+      .readArticle(this.$route.params.id)
+      .then(res => {
+        console.log(thsi.$route.params.id);
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   },
   methods: {
     ...mapActions(["getPost"]),
@@ -103,6 +112,7 @@ export default {
 
 .article {
   max-width: 75%;
+  min-height: 720px;
   margin: 0 auto;
   padding: 85px 10px 0px 10px;
   background-color: $content_color;
@@ -124,6 +134,10 @@ export default {
     color: #7f8c8d;
     font-weight: 400;
     margin-bottom: 10px;
+  }
+
+  &__content {
+    // text-align: justify;
   }
 
   &__loading {

@@ -1,14 +1,15 @@
 <template>
-    <ul class="pagination">
-        <li class="pagination__button" @click="prevPage">
-        </li>
-        <li class="pagination__item" v-for="page in pageArr" @click="switchPage(page)" :class="{'pagination__item--active':page==curPage}" :key="page">
-            {{page}}
-        </li>
-        <li class="pagination__button" @click="nextPage">
-
-        </li>
-    </ul>
+  <ul class="pagination">
+    <li class="pagination__button" @click="prevPage">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+    </li>
+    <li class="pagination__item" v-for="page in pageArr" @click="switchPage(page)" :class="{'pagination__item--active':page==curPage}" :key="page">
+      {{page}}
+    </li>
+    <li class="pagination__button" @click="nextPage">
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -92,31 +93,31 @@ export default {
 
 <style lang="stylus" scoped>
 .pagination {
-    display: flex;
-    max-width: 300px;
-    list-style: none;
-    margin: 25px auto;
+  display: flex;
+  max-width: 300px;
+  list-style: none;
+  margin: 25px auto;
 
-    .pagination__button {
-        flex: 1;
-        text-align: center;
-        color: #0288D1;
-        cursor: pointer;
+  .pagination__button {
+    flex: 1;
+    text-align: center;
+    color: #0288D1;
+    cursor: pointer;
+  }
+
+  .pagination__item {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 10px;
+
+    &:hover {
+      background-color: #efefef;
     }
+  }
 
-    .pagination__item {
-        flex: 1;
-        text-align: center;
-        cursor: pointer;
-        margin: 0 10px;
-
-        &:hover {
-            background-color: #efefef;
-        }
-    }
-
-    .pagination__item--active {
-        background-color: #efefef;
-    }
+  .pagination__item--active {
+    background-color: #efefef;
+  }
 }
 </style>

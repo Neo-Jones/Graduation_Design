@@ -21,6 +21,8 @@
                         <!-- <span v-for="tag in article.tags"> {{tag.name}}</span> -->
                         <p class="list__article__item__more">
                             <router-link :to="'/article/'+article.id" class="continue-reading">阅读全文...</router-link>
+                            <span>
+                                <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;{{ article.readed }}</span>
                         </p>
                     </div>
                 </li>
@@ -126,6 +128,7 @@ export default {
 .list {
     padding: 10px;
     max-width: 75%;
+    min-height: 720px;
     margin: 0 auto;
     padding-top: 85px;
     background-color: $content_color;
@@ -169,15 +172,23 @@ export default {
 
     &__article__item__abstract {
         margin-bottom: 5px;
+        // text-align: justify;
     }
 
     &__article__item__more {
-        margin-top: 15px;
+        margin: 15px 15px 0 0;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            color: $grey-font;
+        }
     }
 
     .continue-reading {
         text-decoration: none;
-        color: #0366d6;
+        // color: #0366d6;
+        color: $theme-color;
     }
 
     &__article__filterMsg {

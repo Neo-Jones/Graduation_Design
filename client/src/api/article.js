@@ -45,4 +45,7 @@ export default {
   getArticle(id) {
     return Axios.get('/api/articles/' + id)
   },
+  readArticle(id) {
+    return Axios.get('/api/article/' + id)
+  }
 }
