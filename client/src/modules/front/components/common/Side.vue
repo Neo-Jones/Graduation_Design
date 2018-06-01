@@ -3,6 +3,7 @@
         <div class="sideBox__mask" :class="{ 'sideBox__mask--show': sideBoxOpen}" @click="closeSideBox"></div>
         <div class="sideBox__main" :class="{ 'sideBox__main--open': sideBoxOpen}">
             <img src="../../assets/avatar.jpg" alt="" class="sideBox__img" @click="backToIndex">
+            <!-- <router-link to="/" class="top-header__main-icon"><img src="../../assets/avatar.jpg" alt="" class="sideBox__img"></router-link> -->
             <p class="sideBox__name">毕业季</p>
             <p class="sideBox__motto">Graduation Design</p>
             <ul class="sideBox__iconList">
@@ -88,8 +89,8 @@ export default {
     }),
     ...mapActions(["getAllTags"]),
     backToIndex() {
-    //   this.$router.push("/");
-        this.setSelectTags([]);
+      this.$router.push("/");
+      this.setSelectTags([selectTags]);
     },
     getScrollTop() {
       let scrollTop = 0,
