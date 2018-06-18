@@ -4,7 +4,7 @@
       <router-view>
       </router-view>
     </transition>
-    <script src="/static/simplemde.min.js"></script>
+    <!-- <script src="./assets/simplemde.min.js"></script> -->
   </div>
 </template>
 

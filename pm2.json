@@ -1,5 +1,5 @@
 [{
-  "name": "vue-blog",
+  "name": "My-Blog",
   "script": "server/start.js",
   "error_file": "server/logs/app-err.log",
   "out_file": "server/logs/app-out.log",

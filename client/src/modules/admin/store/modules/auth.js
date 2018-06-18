@@ -2,7 +2,7 @@ import * as types from '../mutation-types'
 import api from '../../../../api/login.js'
 
 const state = {
-  token: sessionStorage.getItem('vue-blog-token'),
+  token: sessionStorage.getItem('My-Blog-token'),
 }
 // actions
 const actions = {
@@ -30,11 +30,11 @@ const actions = {
 const mutations = {
   [types.CREATE_TOKEN](state, token) {
     state.token = token
-    sessionStorage.setItem('vue-blog-token', token)
+    sessionStorage.setItem('My-Blog-token', token)
   },
   [types.DELETE_TOKEN](state) {
     state.token = null
-    sessionStorage.setItem('vue-blog-token', '')
+    sessionStorage.setItem('My-Blog-token', '')
   },
 }
 export default {
